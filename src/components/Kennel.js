@@ -5,10 +5,8 @@ import ApplicationViews from "./ApplicationViews"
 import "./Kennel.css"
 
 export default () => (
-    <>
-        <Route>
-            <NavBar />
-            <ApplicationViews />
-        </Route>
-    </>
+    <Route>
+        <NavBar />
+        <ApplicationViews />
+    </Route>
 )

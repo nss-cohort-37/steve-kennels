@@ -7,7 +7,7 @@ export default () => {
     const { employees } = useContext(EmployeeContext)
 
     return (
-        <div className="Employees">
+        <div className="employees">
             {employees.map(employee => <Employee key={employee.id} employee={employee} />)}
         </div>
     )
