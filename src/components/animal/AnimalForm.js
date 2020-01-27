@@ -13,6 +13,8 @@ export default props => {
     const breed = useRef(null)
     const location = useRef(null)
 
+    const editMode = props.match.params.hasOwnProperty("animalId")
+
     useEffect(() => {
         if (props.match.params.hasOwnProperty("animalId")) {
             const animalId = parseInt(props.match.params.animalId, 10)
@@ -20,7 +22,7 @@ export default props => {
             setAnimal(selectedAnimal)
             setLocation(selectedAnimal.locationId)
         }
-    }, [animals])
+    }, [animals, props.match.params])
 
     const constructNewAnimal = () => {
         const locationId = parseInt(location.current.value)
@@ -51,7 +53,8 @@ export default props => {
 
     return (
         <form className="animalForm">
-            <h2 className="animalForm__title">Admit Animal</h2>
+
+            <h2 className="animalForm__title">{editMode ? "Update Animal" : "Admit Animal" }</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="animalName">Animal name: </label>
@@ -108,7 +111,7 @@ export default props => {
                     }
                 }
                 className="btn btn-primary">
-                Make Reservation
+                { editMode ? "Save Updates" : "Make Reservation"}
             </button>
         </form>
     )
