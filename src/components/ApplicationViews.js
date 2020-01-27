@@ -29,12 +29,15 @@ export default (props) => {
 
             <EmployeeProvider>
                 <LocationProvider>
+
                     <Route exact path="/employees" render={
                         props => <EmployeeList {...props} />
                     } />
+
                     <Route path="/employees/create" render={
                         props => <EmployeeForm {...props} />
                     } />
+
                 </LocationProvider>
             </EmployeeProvider>
 
