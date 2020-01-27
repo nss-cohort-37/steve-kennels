@@ -1,12 +1,20 @@
 .employees {
+}
+
+.employeeList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .employee {
-    flex-basis: 28%;
+    flex-basis: 33%;
     margin: 1em;
     padding: 1em;
     border: 1px solid goldenrod;
+}
+
+fieldset {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
 }
