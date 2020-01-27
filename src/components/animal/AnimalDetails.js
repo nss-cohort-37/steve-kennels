@@ -21,6 +21,9 @@ export default (props) => {
             <div className="animal__breed">{animal.breed}</div>
             <div className="animal__location">Location: {location.name}</div>
             <div className="animal__owner">Customer: {customer.name}</div>
+            <button onClick={() => {
+                props.history.push(`/animals/edit/${animal.id}`)
+            }}>Edit</button>
         </section>
     )
 }
