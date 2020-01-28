@@ -37,10 +37,6 @@ export const LocationProvider = (props) => {
         getLocations()
     }, [])
 
-    useEffect(() => {
-        console.log("****  LOCATION APPLICATION STATE CHANGED  ****")
-    }, [locations])
-
     return (
         <LocationContext.Provider value={{
             locations, addLocation

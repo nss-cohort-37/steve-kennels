@@ -31,6 +31,9 @@ export default (props) => {
             }>
                 Release Animal
             </button>
+            <button onClick={() => {
+                props.history.push(`/animals/edit/${animal.id}`)
+            }}>Edit</button>
         </section>
     )
 }

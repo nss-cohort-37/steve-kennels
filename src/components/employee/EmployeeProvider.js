@@ -28,11 +28,6 @@ export const EmployeeProvider = (props) => {
         getEmployees()
     }, [])
 
-    useEffect(() => {
-        console.log("****  EMPLOYEE APPLICATION STATE CHANGED  ****")
-        console.log(employees)
-    }, [employees])
-
     return (
         <EmployeeContext.Provider value={{
             employees, addEmployee

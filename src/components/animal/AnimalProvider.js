@@ -26,6 +26,17 @@ export const AnimalProvider = (props) => {
         return fetch(`http://localhost:8088/animals/${animal.id}`, {
             method: "DELETE"
         })
+        .then(getAnimals)
+    }
+
+    const updateAnimal = animal => {
+        return fetch(`http://localhost:8088/animals/${animal.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(animal)
+        })
             .then(getAnimals)
     }
 
@@ -33,14 +44,9 @@ export const AnimalProvider = (props) => {
         getAnimals()
     }, [])
 
-    useEffect(() => {
-        console.log("****  Animal APPLICATION STATE CHANGED  ****")
-        console.log(animals)
-    }, [animals])
-
     return (
         <AnimalContext.Provider value={{
-            animals, addAnimal, releaseAnimal
+            animals, addAnimal, releaseAnimal, updateAnimal
         }}>
             {props.children}
         </AnimalContext.Provider>
