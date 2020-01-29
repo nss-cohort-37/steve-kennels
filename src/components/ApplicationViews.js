@@ -13,6 +13,7 @@ import ProviderProvider from "./ProviderProvider"
 import AnimalDetails from "./animal/AnimalDetails"
 import AnimalForm from "./animal/AnimalForm"
 import { MedicationProvider } from "./medication/MedicationProvider"
+import MedicationForm from "./medication/MedicationForm"
 
 export default (props) => {
     return (
@@ -21,6 +22,9 @@ export default (props) => {
                 <MedicationProvider>
                     <Route exact path="/">
                         <LocationList />
+                    </Route>
+                    <Route exact path="/medications/create">
+                        <MedicationForm />
                     </Route>
                 </MedicationProvider>
             </ProviderProvider>
