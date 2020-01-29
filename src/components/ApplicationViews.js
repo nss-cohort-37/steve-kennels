@@ -12,14 +12,17 @@ import EmployeeForm from "./employee/EmployeeForm"
 import ProviderProvider from "./ProviderProvider"
 import AnimalDetails from "./animal/AnimalDetails"
 import AnimalForm from "./animal/AnimalForm"
+import { MedicationProvider } from "./medication/MedicationProvider"
 
 export default (props) => {
     return (
         <>
             <ProviderProvider>
-                <Route exact path="/">
-                    <LocationList />
-                </Route>
+                <MedicationProvider>
+                    <Route exact path="/">
+                        <LocationList />
+                    </Route>
+                </MedicationProvider>
             </ProviderProvider>
 
             <CustomerProvider>
